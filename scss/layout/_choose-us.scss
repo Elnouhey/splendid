@@ -1,0 +1,80 @@
+.choose-us{
+  background: url("../img/choose.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 100px 0;
+  &--heading{
+    @extend .services--heading;
+    line-height: 2;
+  }
+  &--line{
+    @extend .services--line;
+  }
+  &--kicker{
+    @extend .services--kicker;
+  }
+  &--wrap{
+    @extend .service--wrap;
+    .choose{
+      width:100%;
+      position: relative;
+      background: $white-color;
+      -webkit-box-shadow: $icon-box-shadow;
+              box-shadow: $icon-box-shadow;
+      border-radius: 5px;
+      margin-bottom: 80px;
+      -webkit-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      opacity: 0;
+      &:nth-child(1){ -webkit-transform: translateX(-50px); transform: translateX(-50px); }
+      &:nth-child(2){-webkit-transform: translateY(-50px);transform: translateY(-50px);}
+      &:nth-child(3){-webkit-transform: translateX(50px);transform: translateX(50px);}
+      &.is-showing{
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+      }
+      @media screen and (min-width: $break-md){
+        width: 49%;
+        &:last-child{
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      @media screen and (min-width: $break-lg){
+        width: 32%;
+        &:last-child{
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+      &--icon{
+        @extend .service--icon;
+      }
+      &--box{
+        padding: 40px 20px;
+        text-align: center;
+        h4{
+          font-size: 1rem;
+          line-height: 2;
+          color: $main-color;
+          margin: 20px;
+          font-weight: 700;
+          letter-spacing: 0;
+          @media screen and (min-width: $break-xs){
+              font-size: 1.2rem;
+          }
+          @media screen and (min-width: $break-xs){
+              font-size: 1rem;
+          }
+        }
+        p{
+          color: $text-color;
+          line-height: 35px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.services{
+  padding: 100px 0 ;
+  &--heading{
+    font-size: 1.8rem;
+    color: #03A9F4;
+    text-align: center;
+    font-weight: 900;
+  }
+  &--line{
+    display: block;
+    width: 70px;
+    height: 10px;
+    background: $complement;
+    margin: 50px auto;
+  }
+  &--kicker{
+    padding: 0 15px 70px 15px ;
+    text-align: center;
+    line-height: 2;
+    color: $text-color;
+  }
+}
+.container{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.service--wrap{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  @media screen and (min-width: $break-md){
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+
+  }
+  .service{
+    width:100%;
+    position: relative;
+    min-height: 1px;
+    margin-bottom: 80px;
+    background: $white-color;
+    -webkit-box-shadow: $icon-box-shadow;
+            box-shadow: $icon-box-shadow;
+    border-radius: 5px;
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    &.is-visible{
+      opacity: 1;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    @media screen and (min-width: $break-md){
+      width: 49%;
+    }
+    @media screen and (min-width: $break-lg){
+      width: 32%;
+    }
+    &--icon{
+      margin: -30px auto;
+      color: $complement;
+      background: $white-color;
+      text-align: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      line-height: 60px;
+      font-size: 25px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      -webkit-box-shadow: $icon-box-shadow;
+              box-shadow: $icon-box-shadow;
+      border:1px solid $white-color;
+    }
+    &--box{
+      padding: 40px 20px;
+      text-align: center;
+      h4{
+        font-size: 1rem;
+        color: $main-color;
+        margin: 20px;
+        font-weight: 700;
+        @media screen and (min-width: $break-xs){
+            font-size: 1.5rem;
+        }
+      }
+      p{
+        color: $text-color;
+        line-height: 35px;
+      }
+    }
+  }
+}

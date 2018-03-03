@@ -1,0 +1,25 @@
+// variables
+$body-color: #EEF1F2;
+$main-color : #03A9F4 ;
+$main-dark: darken($main-color, 50%);
+$main-light: lighten($main-color, 10%);
+$complement : complement($main-color);
+$second-color : #11d7c9 ;
+$white-color: #ffffff;
+$overlay-color :rgba(0, 0, 0, 0.4);
+$hover-color: #660066 ;
+$second-overlay: rgba(0, 0, 0, 0.81);
+$text-color: #727272;
+$break-xs : 480px;
+$break-sm : 576px;
+$break-md : 768px;
+$break-lg : 992px;
+$break-xl : 1200px;
+$icon-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.1);
+
+// MIXIns
+
+@mixin boxShadow($x){
+  -webkit-box-shadow: 0px 4px 0px $x;
+  box-shadow: 0px 4px 0px $x;
+}

@@ -1,0 +1,282 @@
+.header{
+    @extend %flex-center;
+    height: 100vh;
+    background: url('../img/banner.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: hidden;
+    &--intro {
+        padding: 0 10px;
+        text-align: center;
+        h1{
+            font-size: 25px;
+            color: $main-color;
+            line-height: 1.5;
+            opacity: 0;
+            -webkit-perspective: 500px;
+                    perspective: 500px;
+            span{
+                color: $complement;
+            }
+            // Media Query
+            @media screen and (min-width: $break-xs){
+                font-size: 30px;
+            }
+            @media screen and (min-width: $break-sm){
+                font-size: 36px;
+            }
+            @media screen and (min-width: $break-md){
+                font-size: 39px;
+                font-weight: 900;
+            }
+            @media screen and (min-width: $break-lg){
+                font-size: 45px;
+            }
+            @media screen and (min-width: $break-xl){
+                font-size: 50px;
+            }
+        }
+        p{
+            color: $white-color;
+            line-height: 2;
+            margin: 0px 0 50px 0;
+            opacity: 0;
+            @media screen and (min-width: $break-md){
+                margin: 10px 0 90px 0;
+                font-size: 20px;
+            }
+            @media screen and (min-width: $break-lg){
+                font-size: 24px;
+            }
+            @media screen and (min-width: $break-xl){
+                font-size: 27px;
+            }
+        }
+    }
+    &--button-wraper{
+      position: relative;
+
+    }
+    &--button{
+        @include boxShadow($second-color);
+        @extend %transition;
+        background:$main-color;
+        color:$white-color;
+        padding:.7rem 1.2rem;
+        border-radius: 10px;
+        font-weight: 900;
+        border:none;
+        letter-spacing: 2px;
+        position: relative;
+        opacity: 0;
+        &:hover{
+            @include boxShadow($main-color);
+            background:$white-color;
+            color:$main-color;
+            cursor: pointer;
+        }
+        @media screen and (min-width: $break-sm){
+          font-size: 18px;
+          padding:1rem 1.5rem;
+        }
+        @media screen and (min-width: $break-md){
+            padding:.7rem 1.5rem;
+        }
+        @media screen and (min-width: $break-lg){
+          padding:.8rem 2rem;
+        }
+        @media screen and (min-width: $break-xl){
+          padding:.8rem 2.2rem;
+        }
+    }
+    &--plane{
+      width:50px;
+      height: 50px;
+      background: url('../img/plane.png') 0 0 / cover no-repeat;
+      position: absolute;
+      left:0;
+      top:0;
+      &::before{
+        content: "";
+        width:4px;
+        height: 4px;
+        border-radius: 50%;
+        // background: red;
+        display: block;
+        margin:8px 0 0 4px;
+        -webkit-animation: dot 1s linear infinite;
+                animation: dot 1s linear infinite;
+      }
+    }
+    &--arrow{
+      position: absolute;
+      bottom:15px;
+      left:50%;
+      margin-left:-15px;
+      height: 30px;
+      width: 30px;
+      background: url('../img/arrow-down.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0;
+      cursor: pointer;
+    }
+    // &--plane.animated{
+    //   animation: plane 10s ease-in-out ;
+    // }
+
+}
+@-webkit-keyframes plane{
+  0% {-webkit-transform: translate(0 , 0 );transform: translate(0 , 0 );}
+  100%{-webkit-transform: translate(2000px, 200px);transform: translate(2000px, 200px);}
+}
+@keyframes plane{
+  0% {-webkit-transform: translate(0 , 0 );transform: translate(0 , 0 );}
+  100%{-webkit-transform: translate(2000px, 200px);transform: translate(2000px, 200px);}
+}
+@-webkit-keyframes dot{
+  0% {background: red;}
+  100%{background: yellow;}
+}
+@keyframes dot{
+  0% {background: red;}
+  100%{background: yellow;}
+}
+@-webkit-keyframes intro{
+  0% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+
+}
+@keyframes intro{
+  0% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+
+}
+@-webkit-keyframes introP{
+  0% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+
+}
+@keyframes introP{
+  0% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+
+}
+
+@-webkit-keyframes bounceArrow{
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    opacity: 1;
+  }
+
+}
+
+@keyframes bounceArrow{
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    opacity: 1;
+  }
+
+}
+@-webkit-keyframes dot2 {
+  0%{ background: red; top: 0; left: 25%; opacity:1}
+  25%{ background: blue; top: 0; left: 72%; opacity:1}
+  50%{ background: green; top: 100%; left: 72%; opacity:1}
+  75%{ background: yellow; top: 100%; left: 25%; opacity:1}
+  100%{ background: red; top: 0; left: 25%; opacity:0}
+}
+@keyframes dot2 {
+  0%{ background: red; top: 0; left: 25%; opacity:1}
+  25%{ background: blue; top: 0; left: 72%; opacity:1}
+  50%{ background: green; top: 100%; left: 72%; opacity:1}
+  75%{ background: yellow; top: 100%; left: 25%; opacity:1}
+  100%{ background: red; top: 0; left: 25%; opacity:0}
+}
+@-webkit-keyframes button {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+
+}
+@keyframes button {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+
+}
+.animated-intro{
+  -webkit-animation: intro 1s ease-in-out forwards 1s;
+          animation: intro 1s ease-in-out forwards 1s;
+}
+.animated-p{
+  -webkit-animation: introP 1s ease-in-out forwards 2s;
+          animation: introP 1s ease-in-out forwards 2s;
+}
+.animated-button{
+  -webkit-animation: button .5s ease-in-out 3.6s forwards;
+          animation: button .5s ease-in-out 3.6s forwards;
+}
+.animated-plane{
+  -webkit-animation: plane 120s cubic-bezier(.79,.90,.99,.86) forwards;
+          animation: plane 120s cubic-bezier(.79,.90,.99,.86) forwards;
+}
+.animated-arrow{
+  -webkit-animation: bounceArrow 2s ease-in-out 3.5s infinite alternate;
+          animation: bounceArrow 2s ease-in-out 3.5s infinite alternate;
+}

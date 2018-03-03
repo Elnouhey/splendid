@@ -1,0 +1,270 @@
+.deals{
+  background: url('../img/deal3.jpg');
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  &--heading{
+    @extend .services--heading;
+    line-height: 2;
+  }
+  &--line{
+    @extend .services--line;
+  }
+  &--kicker{
+    @extend .services--kicker;
+  }
+}
+.deal-wrap{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+  .deal-box{
+    width:100%;
+    height:475px;
+    position: relative;
+    margin: 0 auto;
+    background: $white-color;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0px 0px 2px 1px $complement;
+    box-shadow: 0px 0px 2px 1px $complement;
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    @media screen and (min-width: $break-md){
+      width:48%;
+    }
+    @media screen and (min-width: $break-lg){
+      width:31%;
+    }
+    &.showing{
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    .ribbon {
+      position: absolute;
+      left: -5px; top: -5px;
+      z-index: 1;
+      overflow: hidden;
+      width: 75px; height: 75px;
+      text-align: right;
+      span {
+        font-size: 10px;
+        font-weight: bold;
+        color: #FFF;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 20px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        width: 100px;
+        display: block;
+        background: #79A70A;
+        background: -webkit-gradient(linear, left top, left bottom, from(#05EFF7), to($main-color));
+        background: linear-gradient(#05EFF7 0%, $main-color 100%);
+        -webkit-box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+                box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+        position: absolute;
+        top: 19px; left: -21px;
+        &::before {
+          content: "";
+          position: absolute; left: 0px; top: 100%;
+          z-index: -1;
+          border-left: 3px solid $main-color;
+          border-right: 3px solid transparent;
+          border-bottom: 3px solid transparent;
+          border-top: 3px solid $main-color;
+        }
+        &::after {
+          content: "";
+          position: absolute; right: 0px; top: 100%;
+          z-index: -1;
+          border-left: 3px solid transparent;
+          border-right: 3px solid $main-color;
+          border-bottom: 3px solid transparent;
+          border-top: 3px solid $main-color;
+        }
+      }
+    }
+    .deal-image-inner{
+      height: 60%;
+      overflow: hidden;
+      .deal-image{
+        width:100%;
+        height: 100%;
+      }
+    }
+    .deal-text{
+      height:40%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      .deal-info{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        margin-bottom: auto;
+        padding: 20px;
+        .deal-place{
+          .deal-dest{
+            font-weight: 700;
+            span{
+              color:$main-color;
+              font-weight: 700;
+              font-size: 1.2rem;
+            }
+          }
+          .deal-time{
+            padding-top: 20px;
+            svg{
+              color: $main-color;
+              font-size:1.2rem;
+            }
+          }
+        }
+        .deal-price{
+          span {
+            color:$main-color;
+            font-weight: 700;
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .ratings{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        .rating{
+          width:40%;
+          background: #f5f5f5;
+          height: 40px;
+          line-height: 40px;
+          .rating-inner{
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            width:70%;
+            padding-left: 10px;
+            .star{
+              width:16px;
+              height:16px;
+            }
+          }
+        }
+        .deal-button{
+          background: #f5f5f5;
+          width:60%;
+          position: relative;
+          &::before{
+            content: "";
+            position: absolute;
+            top:0;
+            left:0;
+            width:0;
+            height: 0;
+            border-top:20px solid transparent;
+            border-left: 20px solid #f5f5f5;
+            border-bottom:20px solid transparent;
+          }
+          a{
+            text-align: center;
+            width:100%;
+            display: inline-block;
+            line-height: 40px;
+            background:$main-color;
+            -webkit-transition: all .5s ease;
+            transition: all .5s ease;
+            color:$white-color;
+            font-weight: 700;
+            font-size: .8rem;
+            @media screen and (min-width: $break-md){
+              font-size: 1rem;
+            }
+            &:hover{
+              background:$complement;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.deal1{
+  background: url('../img/pryamids.jpg');
+  background-size: cover;
+  -webkit-transition: all 2.5s ease-in-out;
+  transition: all 2.5s ease-in-out;
+  &:hover{
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+.deal2{
+  background: url('../img/paris.jpg');
+  background-size: cover;
+  -webkit-transition: all 2.5s ease-in-out;
+  transition: all 2.5s ease-in-out;
+  &:hover{
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+.deal3{
+  background: url('../img/edinburgh.jpg');
+  background-size: cover;
+  -webkit-transition: all 2.5s ease-in-out;
+  transition: all 2.5s ease-in-out;
+  &:hover{
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+.deal4{
+  background: url('../img/stonehenge.jpg');
+  background-size: cover;
+  -webkit-transition: all 2.5s ease-in-out;
+  transition: all 2.5s ease-in-out;
+  &:hover{
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+.deal5{
+  background: url('../img/alhambra.jpg');
+  background-size: cover;
+  -webkit-transition: all 2.5s ease-in-out;
+  transition: all 2.5s ease-in-out;
+  &:hover{
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+.deal6{
+  background: url('../img/machupicchu.jpg');
+  background-size: cover;
+  -webkit-transition: all 2.5s ease-in-out;
+  transition: all 2.5s ease-in-out;
+  &:hover{
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}

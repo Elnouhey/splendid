@@ -1,0 +1,176 @@
+.destinations{
+  padding: 100px 0;
+  &--heading{
+    @extend .services--heading;
+    line-height: 2;
+  }
+  &--line{
+    @extend .services--line;
+  }
+  &--kicker{
+    @extend .services--kicker;
+  }
+  &--wrap{
+    @extend .service--wrap;
+  }
+}
+.image{
+  position:relative;
+  width:100%;
+  height:500px;
+  cursor: pointer;
+  @media screen and (min-width: $break-md){
+    width:50%;
+  }
+  @media screen and (min-width: $break-lg){
+    width:25%;
+  }
+  &-box1{
+    background:url("../img/africa.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  &-box2{
+    background:url("../img/asia.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  &-box3{
+    background:url("../img/america.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  &-box4{
+    background:url("../img/europe.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .overlay-image{
+    height: 100%;
+    width:100%;
+    -webkit-transition:all .2s ease-in-out;
+    transition:all .2s ease-in-out;
+    &:hover{
+      background-color: $overlay-color;
+    }
+    .overlay-wrap{
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      .image-info{
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        width:100%;
+        padding-bottom:0;
+        -webkit-transition: all ease 0.5s;
+        transition: all ease 0.5s;
+        .place{
+          color:$complement;
+          font-weight: bold;
+          padding-left:17px;
+          font-size:1.5rem;
+        }
+        .number{
+          color:$main-color;
+          padding-right:17px;
+          font-weight: 700;
+        }
+      }
+      .view-more{
+        opacity: 0;
+        width:100%;
+        .view-all{
+          color:$main-color;
+          padding-bottom: 20px;
+          display:block;
+          text-align: center;
+        }
+        .line-b{
+          height: 10px;
+          background:$complement;
+        }
+      }
+    }
+    &:hover .image-info{
+      padding-bottom:50px;
+    }
+    &:hover .view-more{
+      opacity: 1;
+    }
+  }
+}
+.destinations-divider-wrap{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 100px 0;
+
+}
+.divider{
+  width:100%;
+  padding:10px;
+  -webkit-box-shadow: 0px 10px 5px 0px rgba(179,180,181,0.71);
+    box-shadow: 0px 10px 5px 0px rgba(179,180,181,0.71);
+    margin-bottom: 80px;
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &.showing{
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }    
+    @media screen and (min-width: $break-md){
+      width:49%;
+    }
+    @media screen and (min-width: $break-lg){
+      width:24.5%;
+    }
+  &--icon{
+    width:70px;
+    height: 70px;
+    margin:0 auto;
+  }
+  .earth{
+    background:url('../img/earth.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .support{
+    background:url('../img/support.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .price{
+    background:url('../img/cash.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .booking{
+    background:url('../img/calender.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  &--text{
+    text-align: center;
+    padding:15px 0;
+    h4{
+      text-align: center;
+      padding-bottom: 15px;
+      color:$main-color;
+      line-height: 2;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'base';
+
+
+// Extended Classes
+
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+%transition{
+    transition: all .5s ease-in-out;
+}
+
+
+// Functions
